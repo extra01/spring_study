@@ -17,15 +17,18 @@
     <mvc:interceptor>
       <mvc:mapping path="/**" />
       <mvc:exclude-mapping path="/resources/**" />
-      <beans:bean id="loggerInterceptor"
-        class="com.common.logger.LoggerInterceptor"></beans:bean>
+      <beans:bean id="loggerInterceptor" class="com.common.logger.LoggerInterceptor"></beans:bean>
     </mvc:interceptor>
  
   </mvc:interceptors>
 	
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
-	<annotation-driven />
+	<annotation-driven >
+	<mvc:argument-resolvers>
+            <beans:bean class="com.common.resolver.CustomMapArgumentResolver"></beans:bean>      
+        </mvc:argument-resolvers>
+	</annotation-driven>
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />

@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 public interface BBS_Service {
 	
 	List<Map<String,Object>> SelectList(Map<String, Object> map);
-	public void SelectOne();
-	public void insert();
-	public void update();
-	public void delete();
+	Map<String,Object> SelectOne(String idx);
+	void insert(Map<String, Object> map);
+	void update(Map<String, Object> map);
+	void delete(String idx);
 
 }

@@ -6,6 +6,8 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+
+import com.common.common.CommandMap;
 import com.hello.dao.*;
 
 @Service("BBS_Service")
@@ -18,32 +20,34 @@ public class BBS_Serviceimpl implements BBS_Service{
 	public List<Map<String,Object>> SelectList(Map<String, Object> map) {
 		// TODO Auto-generated method stub
 		
-		return BBS_DAO.SelectBoardList(map);
+		return BBS_DAO.SelectBBSList(map);
 		
 	}
 
 	@Override
-	public void SelectOne() {
+	public Map<String,Object> SelectOne(String idx) {
 		// TODO Auto-generated method stub
+		return BBS_DAO.SelectBBS(idx);
+	}
+
+	@Override
+	public void insert(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		
+		BBS_DAO.InsertBBS(map);
+	}
+
+	@Override
+	public void update(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		BBS_DAO.UpdateBBS(map);
 		
 	}
 
 	@Override
-	public void insert() {
+	public void delete(String idx) {
 		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void update() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete() {
-		// TODO Auto-generated method stub
-		
+		BBS_DAO.DeleteBBS(idx);
 	}
 
 }
