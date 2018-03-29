@@ -1,16 +1,18 @@
-<%@include file="/WEB-INF/views/layout/header.jsp" %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@include file="/WEB-INF/views/layout/header.jsp" %>
+
+<%@ page isELIgnored="false" %> 
 <section class="container">
 	<div class="row">
 		<div class="col-md-4 col-md-offset-5" id="error" style="color:red">
-		<% if(request.getAttribute("error") != null){ %>
-			<%=request.getAttribute("error") %>
+		<% if(request.getAttribute("ms") != null){ %>
+			<%=request.getAttribute("ms") %>
 		<%} %>
 		</div>
 	</div>
 	<div class="row">
-		<form name="register" action="/hello_jsp/member/register" method="post" class="form-horizontal" onsubmit="return check()">
+		<form name="register" action="<c:url value='/auth/register'/>" method="post" class="form-horizontal" onsubmit="return check()">
   			<div class="form-group">
     			<label for="inputEmail3" class="col-sm-2  col-sm-offset-3 control-label">Email</label>
     			<div class="col-sm-4">

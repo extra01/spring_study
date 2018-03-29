@@ -31,11 +31,9 @@ public class HomeController {
 	public String home(Locale locale, Model model,HttpServletRequest req) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		Date date = new Date();
-		System.out.println(req.getParameter("test"));
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
 		String formattedDate = dateFormat.format(date);
-		model.addAttribute("test",req.getParameter("test"));
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "home";

@@ -37,7 +37,7 @@ public class BBS_Controller {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView BBS_list(Map<String,Object> commandMap) {
 		 ModelAndView mv = new ModelAndView("/BBS/BBS_list");
 	        logger.debug("BBS");

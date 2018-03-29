@@ -19,6 +19,11 @@
       <mvc:exclude-mapping path="/resources/**" />
       <beans:bean id="loggerInterceptor" class="com.common.logger.LoggerInterceptor"></beans:bean>
     </mvc:interceptor>
+ 	<mvc:interceptor>
+      <mvc:mapping path="/auth/login" />
+      <mvc:exclude-mapping path="/resources/**" />
+      <beans:bean id="LoginInterceptor" class="com.common.logger.LoginInterceptor"></beans:bean>
+    </mvc:interceptor>
  
   </mvc:interceptors>
 	

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page isELIgnored="false" %> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,10 +36,10 @@
 			if(session.getAttribute("user") != null){
 				//member_dto dto = (member_dto)session.getAttribute("member");
 			%>
-			<a href="/study/">logout</a>
+			<a href="<c:url value='/auth/logout'/>">logout</a>
 			<%}else{ %>
-			<a href="/study/">login</a> <span>/</span>
-			<a href="/study/">register</a>
+			<a href="<c:url value='/auth/login'/>">login</a> <span>/</span>
+			<a href="<c:url value='/auth/register'/>">register</a>
 			<%} %>
 		</div>
 	</div>
@@ -53,7 +55,4 @@
     		</ul>
   		</div>
 	</div>
-		
 </header>
-</body>
-</html>
