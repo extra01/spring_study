@@ -40,9 +40,10 @@
 	<div class="row">
 		<div class="col-md-12">
 			<a class="btn btn-default" href="/study/BBS/">목록</a>
-			<a class="btn btn-default" href="<c:url value='/BBS/update/${BBS.IDX}'/>" >수정</a>
-			<a class="btn btn-default" href="<c:url value='/BBS/delete/${BBS.IDX}'/>">삭제</a>
-			
+			<c:if test="${BBS.CREA_ID eq user.id}">
+				<a class="btn btn-default" href="<c:url value='/BBS/update/${BBS.IDX}'/>" >수정</a>
+				<a class="btn btn-default" href="<c:url value='/BBS/delete/${BBS.IDX}'/>">삭제</a>
+			</c:if>			
 		</div>
 	</div>
 </section>

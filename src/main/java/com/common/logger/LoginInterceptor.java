@@ -19,7 +19,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
             log.debug(" Request URI \t:  " + request.getRequestURI());
         }
     	HttpSession secssion = request.getSession();
-    	if(secssion.getAttribute("user") != null) {
+    	if(secssion.getAttribute("user") == null) {
     		response.sendRedirect("/study/");	
     		return false;
 

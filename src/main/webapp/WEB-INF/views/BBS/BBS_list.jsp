@@ -32,14 +32,21 @@
                 </tr>
             </c:otherwise>
         </c:choose>
-				<td colspan="4">
-				<a href="/hello_jsp/BBS/content?page=1"><<</a>
-				<a href="/hello_jsp/BBS/content?page="></a> 
-				<a href="/hello_jsp/BBS/content?page=">>></a>
+				<td colspan="5">
+				<a href="#"><<</a>
+				<a href="#"></a> 
+				<a href="#">>></a>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="3"><a class="btn btn-default" href="/study/BBS/insert">글쓰기</a></td>
+			<c:choose>
+    			<c:when test="${user eq null}">
+				<td colspan="5"><a class="btn btn-default" onclick="alert('login 필요')">글쓰기</a></td>
+    			</c:when>
+    			<c:otherwise>
+				<td colspan="5"><a class="btn btn-default" href="/study/BBS/insert">글쓰기</a></td>
+    			</c:otherwise>
+    		</c:choose>
 			</tr>
     		</tbody>
   		</table>

@@ -28,8 +28,11 @@ public class Auth_Controller {
 	  
 	  
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView Loing(Map<String,Object> commandMap) {
+	public ModelAndView Loing(Map<String,Object> commandMap, HttpSession session) {
 		ModelAndView mv = new ModelAndView("auth/login");
+		if(session.getAttribute("user") != null) {
+			mv.setViewName("redirect:/BBS");
+		}
 		return mv;
 	}
 	@RequestMapping(value="/login",method=RequestMethod.POST)
